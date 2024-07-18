@@ -58,19 +58,20 @@ function Home() {
   };
 
   return (
-      <div className='container'>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+
+      <div className='container w-50  mt-5  w-100'>
+        <Box className='bg-light text-info rounded-2 mb-2 ' sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs value={activeTab} onChange={selectActiveTab}>
             <Tab label="Customers Table" />
             <Tab label="Total Amounts Chart" />
           </Tabs>
         </Box>
         {activeTab === 0 && customers &&
-           <div className='search-container'>
+           <div className='search-container bg-success rounded-5 p-5 form-control'>
           <InputLabel>
-            Search:
+            Search:...
           </InputLabel>
-          <Input onChange={searchCustomers} type="search" />
+          <Input onChange={searchCustomers} type="search" className='bg-light form-control rounded-3  w-50 mb-2' />
           <CustomersTable customers={customers} />
         </div>
         }
@@ -90,7 +91,7 @@ function Home() {
                   <em>None</em>
                 </MenuItem>
                 {customers.map(customer => (
-                  <MenuItem key={customer.id} value={customer.transactions}>
+                  <MenuItem key={customer.id} value={customer.transactions} >
                     {customer.name}
                   </MenuItem>
                 ))}

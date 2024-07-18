@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Chart from 'react-apexcharts';
-
 const TotalAmountsChart = ({ transactions }) => {
   const [options, setOptions] = useState({
     chart: {
@@ -36,13 +35,17 @@ const TotalAmountsChart = ({ transactions }) => {
   }, [transactions]);
 
   return (
-    <div className="bar-chart">
+    <div class="container-fluid mt-3 bg-light d-flex align-content-center  justify-content-center">
+
+    <div className="bar-chart bg-dark col-9 ">
       <Chart
         options={options}
         series={series}
         type="bar"
-        width="1000"
+        width="800"
+       height="500"
       />
+    </div>
     </div>
   );
 }
